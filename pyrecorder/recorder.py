@@ -13,4 +13,5 @@ class Recorder:
     def close(self):
         pass
 
-
+    def load(self):
+        pass

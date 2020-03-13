@@ -39,6 +39,12 @@ and watch your video.
 
 .. code-block:: bash
 
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    from pyrecorder.video import Video
+    from pyrecorder.recorders.file import File
+
     fname = "example.mp4"
     vid = Video(File(fname))
 

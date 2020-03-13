@@ -19,10 +19,11 @@ data = dict(
     url=__url__,
     python_requires='>=3.6',
     author_email="blankjul@egr.msu.edu",
-    description="Video Recording made easy - the tool you need for Matplotlib, Plotly and more ",
+    description="Video Recording made easy - The tool you need for animations using Matplotlib, Plotly and other "
+                "plotting libraries. ",
     license='Apache License 2.0',
     keywords="video,recording,matplotlib,plotly",
-    install_requires=['numpy>=1.15', 'opencv-python>=4.0.0.21', 'matplotlib'],
+    install_requires=['numpy>=1.15', 'opencv-python>=4.0.0.21', 'matplotlib>=3', 'Pillow'],
     include_package_data=True,
     platforms='any',
     classifiers=[
@@ -34,9 +35,8 @@ data = dict(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
-        'Topic :: Scientific/Engineering',
-        'Topic :: Scientific/Engineering :: Artificial Intelligence',
-        'Topic :: Scientific/Engineering :: Mathematics'
+        'Topic :: Scientific/Engineering :: Visualization',
+        'Topic :: Multimedia :: Video'
     ]
 )
 

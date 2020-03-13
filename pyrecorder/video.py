@@ -1,3 +1,5 @@
+import warnings
+
 from pyrecorder.converters.matpotlib import Matplotlib
 
 
@@ -38,3 +40,16 @@ class Video:
                 video.record()
 
         video.close()
+
+
+def load(fname, height="500px"):
+    if fname.endswith("gif"):
+        from IPython.display import Image
+        return Image(filename=fname)
+
+    elif fname.endswith("mp4"):
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            from IPython.display import HTML
+            code = f"<iframe height='{height}' width='100%' src='{fname}' frameborder='0' allowfullscreen></iframe>"
+            return HTML(code)

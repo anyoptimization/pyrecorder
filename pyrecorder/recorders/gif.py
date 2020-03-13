@@ -1,3 +1,4 @@
+from IPython.display import Image
 from PIL import Image
 
 from pyrecorder.recorder import Recorder
@@ -29,3 +30,4 @@ class GIF(Recorder):
                             optimize=self.optimize,
                             duration=self.duration,
                             loop=self.loop)
+
