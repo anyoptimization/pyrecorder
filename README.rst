@@ -19,15 +19,12 @@ You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/bl
    :target: https://www.apache.org/licenses/LICENSE-2.0
 
 
-|pic1|  |pic2|
+.. raw:: html
 
-.. |pic1| image:: docs/source/_static/pyrecorder.png
-   :width: 45%
-   :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
-
-.. |pic2| image:: docs/source/_static/example_matplotlib.gif
-   :width: 45%
-   :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+   <h1 align="center">
+   <a href="https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/"><img src="docs/source/_static/pyrecorder.png" alt="text"></a>
+   <a href="https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/"><img src="docs/source/_static/example_matplotlib.gif" alt="text"></a>
+   </h1>
 
 
 
