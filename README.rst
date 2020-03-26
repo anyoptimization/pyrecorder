@@ -25,7 +25,7 @@ You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/bl
    :width: 45%
    :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
 
-.. |pic2| image:: docs/source/_static/example_matlab.gif
+.. |pic2| image:: docs/source/_static/example_matplotlib.gif
    :width: 45%
    :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
 
