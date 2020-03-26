@@ -21,6 +21,7 @@ You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/bl
 
 .. image:: docs/source/_static/pyrecorder.png
    :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+   :align: center
 
 
 Installation
