@@ -19,9 +19,17 @@ You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/bl
    :target: https://www.apache.org/licenses/LICENSE-2.0
 
 
-.. image:: docs/source/_static/pyrecorder.png
+|pic1|  |pic2|
+
+.. |pic1| image:: docs/source/_static/pyrecorder.png
+   :width: 45%
    :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
-   :align: center
+
+.. |pic2| image:: docs/source/_static/example_matlab.gif
+   :width: 45%
+   :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+
+
 
 
 Installation
