@@ -7,6 +7,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 testmodules = [
     'tests.test_video',
+    'tests.test_recorder',
 ]
 
 suite = unittest.TestSuite()

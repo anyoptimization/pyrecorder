@@ -7,7 +7,7 @@ class Converter:
         super().__init__()
 
     @abstractmethod
-    def do(self):
+    def do(self, **kwargs):
         pass
 
     def finalize(self, **kwargs):

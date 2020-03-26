@@ -2,6 +2,8 @@
 *.mp4
 *.gif
 
+docs/source/*.html
+
 # pycharm folder
 .idea/
 

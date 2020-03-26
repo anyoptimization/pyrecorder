@@ -19,6 +19,9 @@ You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/bl
    :target: https://www.apache.org/licenses/LICENSE-2.0
 
 
+.. image:: docs/source/_static/pyrecorder.png
+   :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+
 
 Installation
 ============
@@ -42,18 +45,26 @@ and watch your video.
     import numpy as np
     import matplotlib.pyplot as plt
 
-    from pyrecorder.video import Video
+    from pyrecorder.converters.matplotlib import Matplotlib
     from pyrecorder.recorders.file import File
+    from pyrecorder.video import Video
 
-    fname = "example.mp4"
-    vid = Video(File(fname))
+    fname = "example_matplotlib.mp4"
 
-    for k in range(10):
-        X = np.random.random((100, 2))
-        plt.scatter(X[:, 0], X[:, 1])
-        vid.record()
+    with Video(File(fname), converter=Matplotlib()) as vid:
 
-    vid.close()
+        for k in range(10):
+            fig, (ax1, ax2) = plt.subplots(2)
+
+            X = np.random.random((100, 2))
+            ax1.scatter(X[:, 0], X[:, 1], color="green")
+
+            X = np.random.random((100, 2))
+            ax2.scatter(X[:, 0], X[:, 1], color="red")
+
+            vid.record(fig=fig)
+
+
 
 
 

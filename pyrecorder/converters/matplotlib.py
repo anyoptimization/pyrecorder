@@ -14,9 +14,13 @@ class Matplotlib(Converter):
         self.dpi = dpi
         self.close_after_recording = close_after_recording
 
-    def do(self):
+    def do(self, fig=None, **kwargs):
         buf = io.BytesIO()
-        plt.savefig(buf, format='png', dpi=self.dpi)
+
+        if fig is None:
+            plt.savefig(buf, format='png', dpi=self.dpi)
+        else:
+            fig.savefig(buf, format='png', dpi=self.dpi)
 
         buf.seek(0)
         _bytes = np.asarray(bytearray(buf.read()), dtype=np.uint8)
