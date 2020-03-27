@@ -1,4 +1,4 @@
-from IPython.display import display
+
 
 from pyrecorder.converters.matplotlib import Matplotlib
 
@@ -54,7 +54,7 @@ def load(fname):
         return Image(filename=fname)
 
     elif fname.endswith("mp4"):
-        from IPython.display import HTML
+        from IPython.display import HTML, display
         html = """
         <div align="middle">
             <video controls>
