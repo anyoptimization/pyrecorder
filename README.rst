@@ -1,4 +1,4 @@
-|travis| |python| |license|
+|python| |license|
 
 
 .. |travis| image:: https://travis-ci.com/julesy89/pyrecorder.svg?branch=master
@@ -13,12 +13,12 @@
    :target: https://www.apache.org/licenses/LICENSE-2.0
 
 
-.. |logo| image:: https://github.com/julesy89/pyrecorder/docs/source/_static/pyrecorder.png
+.. |logo| image:: https://github.com/julesy89/pyrecorder/raw/master/docs/source/_static/pyrecorder.png
   :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
   :alt: pyrecorder
 
 
-.. |animation| image:: https://github.com/julesy89/pyrecorder/docs/source/_static/example_matplotlib.gif
+.. |animation| image:: https://github.com/julesy89/pyrecorder/raw/master/docs/source/_static/example_matplotlib.gif
   :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
   :alt: animation
 
