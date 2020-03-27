@@ -23,7 +23,7 @@ data = dict(
                 "plotting libraries. ",
     license='Apache License 2.0',
     keywords="video,recording,matplotlib,plotly",
-    install_requires=['numpy>=1.15', 'opencv-python>=4.0.0.21', 'matplotlib>=3', 'Pillow', 'ipython'],
+    install_requires=['numpy>=1.15', 'opencv-python>=4.0.0.21', 'matplotlib>=3', 'Pillow'],
     include_package_data=True,
     platforms='any',
     classifiers=[
