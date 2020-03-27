@@ -7,7 +7,6 @@ import numpy as np
 from pyrecorder.recorders.file import File
 from pyrecorder.recorders.gif import GIF
 from pyrecorder.recorders.html import HTML
-from pyrecorder.recorders.streamer import Streamer
 from pyrecorder.video import Video
 
 
@@ -72,15 +71,6 @@ class SimpleVideoTest(unittest.TestCase):
         self.assertTrue(os.path.exists("example.html"))
         os.remove("example.html")
 
-    def test_stream_simple(self):
-        vid = Video(Streamer(mode="stream", delay=1000, close_window=True))
-
-        for k in range(3):
-            X = np.random.random((100, 2))
-            plt.scatter(X[:, 0], X[:, 1])
-            vid.record()
-
-        vid.close()
 
 
 if __name__ == '__main__':

@@ -1,4 +1,4 @@
-|python| |license|
+|travis| |python| |license|
 
 
 .. |travis| image:: https://travis-ci.com/julesy89/pyrecorder.svg?branch=master
@@ -27,7 +27,8 @@
 
 
 
-You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+You can find the detailed documentation here:
+https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
 
 
 
