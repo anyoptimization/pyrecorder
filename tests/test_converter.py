@@ -25,7 +25,7 @@ class SimpleConverterTest(unittest.TestCase):
         vid.close()
 
         self.assertTrue(os.path.exists(fname))
-        os.remove(fname)
+        # os.remove(fname)
 
 
 

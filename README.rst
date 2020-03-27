@@ -1,9 +1,3 @@
-pyrecorder
-====================================================================
-
-You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
-
-
 |travis| |python| |license|
 
 
@@ -19,13 +13,21 @@ You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/bl
    :target: https://www.apache.org/licenses/LICENSE-2.0
 
 
-.. raw:: html
+.. |logo| image:: docs/source/_static/pyrecorder.png
+  :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+  :alt: pyrecorder
 
-   <h1 align="center">
-   <a href="https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/"><img src="docs/source/_static/pyrecorder.png" alt="text"></a>
-   <a href="https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/"><img src="docs/source/_static/example_matplotlib.gif" alt="text"></a>
-   </h1>
 
+.. |animation| image:: docs/source/_static/example_matplotlib.gif
+  :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+  :alt: animation
+
+
+|logo|
+
+
+
+You can find the detailed documentation here: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
 
 
 
@@ -42,8 +44,8 @@ The framework is available at the PyPi Repository:
 Usage
 =====
 
-It's as simple as it can be. Initialize an `Video` object with a `Recorder` and record the current
-plots be calling `record()`. Finally, close the video object with `close()` and you are good to go
+It's as simple as it should be. Initialize a `Video` object with a `Recorder` and record the current
+plots by calling `record()`. Finally, close the video object with `close()` and you are good to go
 and watch your video.
 
 .. code-block:: bash
@@ -51,27 +53,28 @@ and watch your video.
     import numpy as np
     import matplotlib.pyplot as plt
 
-    from pyrecorder.converters.matplotlib import Matplotlib
     from pyrecorder.recorders.file import File
     from pyrecorder.video import Video
 
-    fname = "example_matplotlib.mp4"
+    fname = "video.mp4"
+    vid = Video(File(fname))
 
-    with Video(File(fname), converter=Matplotlib()) as vid:
+    for k in range(10):
+        fig, (ax1, ax2) = plt.subplots(2)
 
-        for k in range(10):
-            fig, (ax1, ax2) = plt.subplots(2)
+        X = np.random.random((100, 2))
+        ax1.scatter(X[:, 0], X[:, 1], color="green")
 
-            X = np.random.random((100, 2))
-            ax1.scatter(X[:, 0], X[:, 1], color="green")
+        X = np.random.random((100, 2))
+        ax2.scatter(X[:, 0], X[:, 1], color="red")
 
-            X = np.random.random((100, 2))
-            ax2.scatter(X[:, 0], X[:, 1], color="red")
+        vid.record(fig=fig)
 
-            vid.record(fig=fig)
-
+    vid.close()
 
 
+
+|animation|
 
 
 Contact

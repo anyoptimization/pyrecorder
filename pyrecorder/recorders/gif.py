@@ -1,4 +1,4 @@
-from IPython.display import Image
+import cv2
 from PIL import Image
 
 from pyrecorder.recorder import Recorder
@@ -20,14 +20,16 @@ class GIF(Recorder):
         self.loop = loop
 
     def do(self, frame):
+        frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
         img = Image.fromarray(frame, 'RGB')
         self.frames.append(img)
 
     def close(self):
-        self.frames[0].save(self.fname,
-                            save_all=True,
-                            append_images=self.frames[1:],
-                            optimize=self.optimize,
-                            duration=self.duration,
-                            loop=self.loop)
+        if len(self.frames) > 0:
+            self.frames[0].save(self.fname,
+                                save_all=True,
+                                append_images=self.frames[1:],
+                                optimize=self.optimize,
+                                duration=self.duration,
+                                loop=self.loop)
 
