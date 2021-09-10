@@ -69,7 +69,7 @@ It's as simple as it should be. Initialize a `Recorder` object with a `Writer` a
 
 
 
-.. image:: https://anyoptimization.com/projects/pyrecorder/_static/github.gif
+.. image:: https://anyoptimization.com/projects/pyrecorder/_static/usage.gif
 
 
 Contact
