@@ -1,33 +1,21 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from pyrecorder.converters.matplotlib import Matplotlib
 from pyrecorder.recorder import Recorder
-from pyrecorder.writers.gif import GIF
+from pyrecorder.writers.video import Video
 
-# initialize the converter which is creates an image when `record()` is called
-converter = Matplotlib(dpi=120)
+# create a writer object (here, mp4)
+writer = Video("video.mp4")
 
-writer = GIF("github.gif")
+# use the with statement to close the recorder when done
+with Recorder(writer) as rec:
 
-rec = Recorder(writer, converter=converter)
+    # record 10 different snapshots
+    for t in range(10):
 
-for t in range(10):
+        # create the plot (here, using matplotlib)
+        X = np.random.random((50, 2))
+        plt.scatter(X[:, 0], X[:, 1], facecolor="none", edgecolor="red")
 
-    # let us create a local figure object with two sub figures
-    fig, (ax1, ax2) = plt.subplots(2, figsize=(3, 4))
-
-    X = np.random.random((100, 2))
-    ax1.scatter(X[:, 0], X[:, 1], color="green")
-
-    X = np.random.random((100, 2))
-    ax2.scatter(X[:, 0], X[:, 1], color="red")
-
-    # fix the size of figure and legends
-    fig.tight_layout()
-
-    # take a snapshot the specific figure object with the recorder
-    rec.record(fig=fig)
-
-
-rec.close()
+        # use the record to store the current plot
+        rec.record()

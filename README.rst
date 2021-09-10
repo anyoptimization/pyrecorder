@@ -55,20 +55,18 @@ It's as simple as it should be. Initialize a `Recorder` object with a `Writer` a
     from pyrecorder.recorder import Recorder
     from pyrecorder.writers.video import Video
 
-    # create a writer that takes the
-    writer = Video("example.mp4")
+    # create a writer object (here, mp4)
+    writer = Video("video.mp4")
 
     # use the with statement to close the recorder when done
     with Recorder(writer) as rec:
 
         # record 10 different snapshots
-        for k in range(10):
+        for t in range(10):
 
-            # create random data points
-            X = np.random.random((100, 2))
-
-            # plot them into a scatter plot
-            plt.scatter(X[:, 0], X[:, 1])
+            # create the plot (here, using matplotlib)
+            X = np.random.random((50, 2))
+            plt.scatter(X[:, 0], X[:, 1], facecolor="none", edgecolor="red")
 
             # use the record to store the current plot
             rec.record()
