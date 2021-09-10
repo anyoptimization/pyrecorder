@@ -13,13 +13,13 @@
    :target: https://www.apache.org/licenses/LICENSE-2.0
 
 
-.. |logo| image:: https://github.com/julesy89/pyrecorder/raw/master/docs/source/_static/pyrecorder.png
-  :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+.. |logo| image:: https://github.com/anyoptimization/pyrecorder/blob/master/docs/source/_static/pyrecorder.png
+  :target: https://anyoptimization.com/projects/pyrecorder/
   :alt: pyrecorder
 
 
-.. |animation| image:: https://github.com/julesy89/pyrecorder/raw/master/docs/source/_static/example_matplotlib.gif
-  :target: https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+.. |animation| image:: https://anyoptimization.com/projects/pyrecorder/_static/github.gif
+  :target: https://anyoptimization.com/projects/pyrecorder/
   :alt: animation
 
 
@@ -28,7 +28,7 @@
 
 
 You can find the detailed documentation here:
-https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/
+https://anyoptimization.com/projects/pyrecorder/
 
 
 
@@ -45,33 +45,33 @@ The framework is available at the PyPi Repository:
 Usage
 =====
 
-It's as simple as it should be. Initialize a `Video` object with a `Recorder` and record the current
-plots by calling `record()`. Finally, close the video object with `close()` and you are good to go
-and watch your video.
+It's as simple as it should be. Initialize a `Recorder` object with a `Writer` and store plots by calling `record()`.
 
 .. code-block:: bash
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
-    from pyrecorder.recorders.file import File
-    from pyrecorder.video import Video
+    from pyrecorder.recorder import Recorder
+    from pyrecorder.writers.video import Video
 
-    fname = "video.mp4"
-    vid = Video(File(fname))
+    # create a writer that takes the
+    writer = Video("example.mp4")
 
-    for k in range(10):
-        fig, (ax1, ax2) = plt.subplots(2)
+    # use the with statement to close the recorder when done
+    with Recorder(writer) as rec:
 
-        X = np.random.random((100, 2))
-        ax1.scatter(X[:, 0], X[:, 1], color="green")
+        # record 10 different snapshots
+        for k in range(10):
 
-        X = np.random.random((100, 2))
-        ax2.scatter(X[:, 0], X[:, 1], color="red")
+            # create random data points
+            X = np.random.random((100, 2))
 
-        vid.record(fig=fig)
+            # plot them into a scatter plot
+            plt.scatter(X[:, 0], X[:, 1])
 
-    vid.close()
+            # use the record to store the current plot
+            rec.record()
 
 
 
