@@ -5,7 +5,7 @@
    :alt: build status
    :target: https://travis-ci.com/julesy/pyrecorder
 
-.. |python| image:: https://img.shields.io/badge/python-3.6-blue.svg
+.. |python| image:: https://img.shields.io/badge/python-3.9-blue.svg
    :alt: python 3.6
 
 .. |license| image:: https://img.shields.io/badge/license-apache-orange.svg

@@ -2,10 +2,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from pyrecorder.recorder import Recorder
+from pyrecorder.writers.gif import GIF
 from pyrecorder.writers.video import Video
 
 # create a writer object (here, mp4)
 writer = Video("video.mp4")
+
+writer = GIF("github.gif")
 
 # use the with statement to close the recorder when done
 with Recorder(writer) as rec:
