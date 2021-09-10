@@ -18,10 +18,6 @@
   :alt: pyrecorder
 
 
-.. |example| image:: https://anyoptimization.com/projects/pyrecorder/_static/github.gif
-  :target: https://anyoptimization.com/projects/pyrecorder/
-  :alt: animation
-
 
 |logo|
 
@@ -73,7 +69,7 @@ It's as simple as it should be. Initialize a `Recorder` object with a `Writer` a
 
 
 
-|example|
+.. image:: https://anyoptimization.com/projects/pyrecorder/_static/github.gif
 
 
 Contact
