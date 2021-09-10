@@ -1,9 +1,9 @@
 import cv2
 
-from pyrecorder.recorder import Recorder
+from pyrecorder.writer import Writer
 
 
-class File(Recorder):
+class Video(Writer):
 
     def __init__(self,
                  fname,
@@ -15,10 +15,9 @@ class File(Recorder):
         self.fname = fname
         self.codec = codec
         self.fps = fps
-
         self.file = None
 
-    def do(self, frame, n_frames=1):
+    def write(self, frame, n_frames=1):
 
         if self.file is None:
             height, width, layers = frame.shape

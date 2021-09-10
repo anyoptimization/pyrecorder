@@ -1,11 +1,14 @@
 from abc import abstractmethod
 
 
-class Converter:
+class Writer:
 
     def __init__(self) -> None:
         super().__init__()
 
     @abstractmethod
-    def convert(self, **kwargs):
+    def record(self, frame):
+        pass
+
+    def close(self):
         pass

@@ -18,9 +18,9 @@ class Matplotlib(Converter):
         buf = io.BytesIO()
 
         if fig is None:
-            plt.savefig(buf, format='png', dpi=self.dpi)
+            plt.savefig(buf, format='png', dpi=self.dpi, **kwargs)
         else:
-            fig.savefig(buf, format='png', dpi=self.dpi)
+            fig.savefig(buf, format='png', dpi=self.dpi, **kwargs)
 
         buf.seek(0)
         _bytes = np.asarray(bytearray(buf.read()), dtype=np.uint8)
@@ -30,3 +30,4 @@ class Matplotlib(Converter):
             plt.close()
 
         return img
+

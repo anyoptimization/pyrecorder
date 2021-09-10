@@ -10,7 +10,7 @@ from pyrecorder.version import __version__
 
 __name__ = "pyrecorder"
 __author__ = "Julian Blank"
-__url__ = "https://www.egr.msu.edu/coinlab/blankjul/pyrecorder/"
+__url__ = "https://anyoptimization.com/projects/pyrecorder/"
 
 data = dict(
     name=__name__,
@@ -19,11 +19,11 @@ data = dict(
     url=__url__,
     python_requires='>=3.6',
     author_email="blankjul@egr.msu.edu",
-    description="Video Recording made easy - The tool you need for animations using Matplotlib, Plotly and other "
+    description="Recorder Recording made easy - The tool you need for animations using Matplotlib, Plotly and other "
                 "plotting libraries. ",
     license='Apache License 2.0',
     keywords="video,recording,matplotlib,plotly",
-    install_requires=['numpy>=1.15', 'opencv-python>=4.0.0.21', 'matplotlib>=3', 'Pillow'],
+    install_requires=['numpy>=1.15', 'opencv-python>=4.0.0.21', 'matplotlib>=3', 'imageio'],
     include_package_data=True,
     platforms='any',
     classifiers=[
@@ -36,7 +36,7 @@ data = dict(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Topic :: Scientific/Engineering :: Visualization',
-        'Topic :: Multimedia :: Video'
+        'Topic :: Multimedia :: Recorder'
     ]
 )
 

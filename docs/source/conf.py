@@ -18,19 +18,20 @@
 # -- Project information -----------------------------------------------------
 
 project = 'pyrecorder'
-copyright = '2020, Julian Blank'
+copyright = '2021, Julian Blank'
 author = 'Julian Blank'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1.0'
-
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['nbsphinx']
+extensions = [
+    'nbsphinx'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -41,20 +42,22 @@ templates_path = ['_templates']
 exclude_patterns = ['**.ipynb_checkpoints']
 
 
-source_suffix = '.ipynb'
-
-
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# do not have any title on the page
-html_title = ""
+html_theme = "sphinx_book_theme"
+html_logo = "_static/pyrecorder.png"
+html_title = "pyrecorder"
+html_copy_source = False
+html_sourcelink_suffix = ""
+html_last_updated_fmt = ""
+
+
+# -- nbsphinx_allow_errors ---------------------------------------------------
+
+nbsphinx_allow_errors = True

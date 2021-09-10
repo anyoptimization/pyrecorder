@@ -1,7 +1,7 @@
 import base64
 import os
 
-from pyrecorder.recorder import Recorder
+from pyrecorder.writers import Writer
 
 
 def to_html(_in, _out, format="video/mp4", remove_in=False, embedded=False):
@@ -29,7 +29,7 @@ def to_html(_in, _out, format="video/mp4", remove_in=False, embedded=False):
         os.remove(_in)
 
 
-class HTML(Recorder):
+class HTML(Writer):
 
     def __init__(self, recorder, embedded=False) -> None:
         super().__init__()

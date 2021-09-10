@@ -9,6 +9,9 @@ docs/source/*.html
 # pycharm folder
 .idea/
 
+*.gif
+*.mp4
+
 **/.DS_Store
 
 
