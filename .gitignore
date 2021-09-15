@@ -11,6 +11,7 @@ docs/source/*.html
 
 *.gif
 *.mp4
+*.webm
 
 **/.DS_Store
 

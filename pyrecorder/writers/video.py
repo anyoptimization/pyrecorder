@@ -7,7 +7,7 @@ class Video(Writer):
 
     def __init__(self,
                  fname,
-                 codec=cv2.VideoWriter_fourcc('m', 'p', '4', 'v'),
+                 codec='mp4v',
                  fps=1,
                  ) -> None:
         super().__init__()
@@ -18,10 +18,17 @@ class Video(Writer):
         self.file = None
 
     def write(self, frame, n_frames=1):
-
         if self.file is None:
             height, width, layers = frame.shape
-            self.file = cv2.VideoWriter(self.fname, self.codec, self.fps, frameSize=(width, height))
+
+            fourcc = self.codec
+            if isinstance(fourcc, str):
+                fourcc = cv2.VideoWriter_fourcc(*self.codec)
+
+            self.file = cv2.VideoWriter(self.fname,
+                                        fourcc,
+                                        self.fps,
+                                        frameSize=(width, height))
 
         for k in range(n_frames):
             self.file.write(frame)

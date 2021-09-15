@@ -1,24 +1,34 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+from pyrecorder.converters.matplotlib import Matplotlib
 from pyrecorder.recorder import Recorder
 from pyrecorder.writers.gif import GIF
-from pyrecorder.writers.video import Video
 
-# create a writer object (here, mp4)
-writer = Video("video.mp4")
+# initialize the converter which is creates an image when `record()` is called
+converter = Matplotlib()
 
-writer = GIF("github.gif")
+writer = GIF("medium2.gif", duration=0.5)
 
-# use the with statement to close the recorder when done
-with Recorder(writer) as rec:
+rec = Recorder(writer, converter=converter)
 
-    # record 10 different snapshots
-    for t in range(10):
+for t in range(50):
 
-        # create the plot (here, using matplotlib)
-        X = np.random.random((50, 2))
-        plt.scatter(X[:, 0], X[:, 1], facecolor="none", edgecolor="red")
+    # let us create a local figure object with two sub figures
+    fig, (ax1, ax2) = plt.subplots(2, figsize=(3, 4))
 
-        # use the record to store the current plot
-        rec.record()
+    X = np.random.random((100, 2))
+    ax1.scatter(X[:, 0], X[:, 1], color="green")
+
+    X = np.random.random(5)
+    ax2.pie(X)
+    # ax2.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+    # fix the size of figure and legends
+    fig.tight_layout()
+
+    # take a snapshot the specific figure object with the recorder
+    rec.record(fig=fig)
+
+
+rec.close()
